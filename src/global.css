@@ -1,0 +1,11 @@
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+.margin_b_15{
+  margin-bottom: 15px;
+}
