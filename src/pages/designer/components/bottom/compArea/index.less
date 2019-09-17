@@ -1,0 +1,32 @@
+.designer-comp{
+    flex: 0 0 200px;
+    height: 100%;
+    padding-right: 5px;
+    box-sizing: border-box;
+    .item{
+        width: 50%;
+        float: left;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        cursor: move;
+        .icon{
+            font-size: 24px;
+        }
+        .text{
+            margin-top: 5px;
+            font-size: 14px;
+        }
+        &:hover{
+            background-color: #1890ff;
+            .icon{
+                color: #fff;
+            }
+            .text{
+                color: #fff;
+            }
+        }
+    }
+}
