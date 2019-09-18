@@ -1,6 +1,6 @@
 // 定义各个组件的基本数据结构，后续需要通过这个遍历得到属性
-export default [
-    {
+export default {
+    'Text':{
         // 组件id
         "id":new Date().getTime()+Math.random(),
         // 组件类型
@@ -14,15 +14,7 @@ export default [
         // 组件的数据属性
         "data":null
     },
-    {
-        "id":new Date().getTime()+Math.random(),
-        "type":"INPUT",
-        "actualValue":"",
-        "common":{},
-        "style":{},
-        "data":{}
-    },
-    {
+    "TEXTAREA":{
         "id":new Date().getTime()+Math.random(),
         "type":"TEXTAREA",
         "actualValue":"",
@@ -30,7 +22,7 @@ export default [
         "style":{},
         "data":{}
     },
-    {
+    "SELECT":{
         "id":new Date().getTime()+Math.random(),
         "type":"SELECT",
         "actualValue":"",
@@ -38,7 +30,7 @@ export default [
         "style":{},
         "data":{}
     },
-    {
+    "CHECKBOX":{
         "id":new Date().getTime()+Math.random(),
         "type":"CHECKBOX",
         "actualValue":"",
@@ -46,7 +38,7 @@ export default [
         "style":{},
         "data":{}
     },
-    {
+    "RADIO":{
         "id":new Date().getTime()+Math.random(),
         "type":"RADIO",
         "actualValue":"",
@@ -54,7 +46,7 @@ export default [
         "style":{},
         "data":{}
     },
-    {
+    "DATE":{
         "id":new Date().getTime()+Math.random(),
         "type":"DATE",
         "actualValue":"",
@@ -62,7 +54,7 @@ export default [
         "style":{},
         "data":{}
     },
-    {
+    "TABLE":{
         "id":new Date().getTime()+Math.random(),
         "type":"TABLE",
         "actualValue":[],
@@ -78,4 +70,4 @@ export default [
             "data":{}
         }]
     }
-]
+}  
