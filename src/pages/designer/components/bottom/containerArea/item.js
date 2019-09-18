@@ -48,13 +48,13 @@ export default DropTarget(
     {
       beginDrag: props => ({
         id: props.id,
-        originalIndex: props.findCard(props.id).index,
+        // originalIndex: props.findCard(props.id).index,
       }),
       endDrag(props, monitor) {
         const { id: droppedId, originalIndex } = monitor.getItem()
         const didDrop = monitor.didDrop()
         if (!didDrop) {
-          props.moveCard(droppedId, originalIndex)
+          // props.moveCard(droppedId, originalIndex)
         }
       },
     },

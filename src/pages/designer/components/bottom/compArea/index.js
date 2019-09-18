@@ -21,8 +21,7 @@ export default class Index extends Component {
                     this.state.typeList.map((item,index)=>{
                         return <Item item={item} key={index}/>
                     })
-                }
-                
+                }                
             </div>
         )
     }

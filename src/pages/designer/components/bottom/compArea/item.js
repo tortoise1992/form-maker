@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import { DragSource } from 'react-dnd'
-import ItemTypes from '../../type'
+import Types from '../../../type'
 import { Icon } from 'antd'
 const icon={
     'TEXT':'file-text',
@@ -18,7 +18,7 @@ const Card = ({ item, connectDragSource}) => {
   )
 }
 export default DragSource(
-    ItemTypes.CARD,
+    Types.CARD,
     {
       beginDrag: props => {
           return {
