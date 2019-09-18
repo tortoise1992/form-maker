@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import { DragSource, DropTarget } from 'react-dnd'
-import ItemTypes from '../../type'
+import Types from '../../../type'
 const style = {
   border: '1px dashed gray',
   padding: '0.5rem 1rem',
@@ -23,7 +23,7 @@ const Card = ({ text, isDragging, connectDragSource, connectDropTarget,isOver })
   )
 }
 export default DropTarget(
-  ItemTypes.CARD,
+  Types.CARD,
   {
     canDrop: () => false,
     hover(props, monitor) {
@@ -44,7 +44,7 @@ export default DropTarget(
   }),
 )(
   DragSource(
-    ItemTypes.CARD,
+    Types.CARD,
     {
       beginDrag: props => ({
         id: props.id,

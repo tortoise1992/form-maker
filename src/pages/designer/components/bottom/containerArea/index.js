@@ -1,12 +1,19 @@
 import React, { Component } from 'react'
 import { DropTarget } from 'react-dnd';
 import Types from '../../../type'
+import Item from './item'
+import './index.less'
 class Index extends Component {
+  state={
+    list:['hahahah','dajdkaj','dhadadjakjhdahkdhakh','dhahdakhdhkahkd']
+  }
   render() {
     const { connectDropTarget } = this.props
     return connectDropTarget(
-      <div className='designer-container' style={{height:500,width:500}}>
-
+      <div className='designer-container'>
+        {
+          this.state.list.map((item,index)=><Item key={index} text={item}></Item>)
+        }
       </div>
     )
   }
