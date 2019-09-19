@@ -1,6 +1,6 @@
 // 定义各个组件的基本数据结构，后续需要通过这个遍历得到属性
 export default {
-    'Text':{
+    'TEXT':{
         // 组件id
         "id":new Date().getTime()+Math.random(),
         // 组件类型
@@ -16,7 +16,7 @@ export default {
     },
     "INPUT":{
         "id":new Date().getTime()+Math.random(),
-        "type":"TEXTAREA",
+        "type":"INPUT",
         "actualValue":"",
         "common":{},
         "style":{},

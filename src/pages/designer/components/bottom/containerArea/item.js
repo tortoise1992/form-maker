@@ -31,15 +31,18 @@ const style = {
     float: 'left',
     width: '50%'
 }
-const Card = ({ text, isDragging, connectDragSource, connectDropTarget, isOver }) => {
+const Card = ({ item, isDragging, connectDragSource, connectDropTarget, isOver }) => {
     const opacity = isDragging ? 0 : 1
     const borderBottom = isOver ? '1px solid red' : '1px dashed gray'
     const ref = useRef(null)
     connectDragSource(ref)
     connectDropTarget(ref)
+    let props={
+        item
+    }
     return (
         <div ref={ref} style={{ ...style, opacity, borderBottom }}>
-            {text}
+            {compDict(props)[item.type]}
         </div>
     )
 }

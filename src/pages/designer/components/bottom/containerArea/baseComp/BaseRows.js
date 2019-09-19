@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-export default class BaseText extends Component {
+export default class BaseRows extends Component {
     render() {
         return (
             <div>
-                纯文本
+                
             </div>
         )
     }

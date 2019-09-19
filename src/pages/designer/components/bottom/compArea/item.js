@@ -5,7 +5,8 @@ import { Icon } from 'antd'
 const icon = {
     'TEXT': 'file-text',
     'INPUT': 'edit',
-    'TEXTAREA': 'form'
+    'TEXTAREA': 'form',
+    "ROWS":'appstore'
 }
 const Card = ({ item, connectDragSource }) => {
     const ref = useRef(null)
