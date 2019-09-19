@@ -69,11 +69,16 @@ export default flow(
     ),
     DropTarget(Types.CARD,
         {
-            canDrop: () => false,
-            hover(props, monitor) {
+            canDrop: () => true,
+            // hover(props, monitor) {
+            //     console.log(props)
+            //     console.log(monitor.getItem())
+            //     // 这里要判断目标不是自身
+            //     // 通过monitor拿到自身的对象,props拿到的是目标对象
+            // },
+            drop(props, monitor){
                 console.log(props)
-                // 这里要判断目标不是自身
-                // 通过monitor拿到自身的对象,props拿到的是目标对象
+                console.log(monitor.getItem())
             }
         },
         (connect, monitor) => ({

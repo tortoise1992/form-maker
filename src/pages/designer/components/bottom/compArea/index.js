@@ -29,7 +29,7 @@ export default class Index extends Component {
                             } 
                         </div>                         
                     </Panel>
-                    {/* <Panel header="栅格组件" key="2">
+                    <Panel header="栅格组件" key="2">
                         <div className='wrapper'>
                             <Item 
                                 item={{
@@ -38,7 +38,7 @@ export default class Index extends Component {
                                 }}
                             />
                         </div>                        
-                    </Panel>                     */}
+                    </Panel>                    
                 </Collapse>
                               
             </div>

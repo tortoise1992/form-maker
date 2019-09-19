@@ -1,8 +1,18 @@
 // 定义各个组件的基本数据结构，后续需要通过这个遍历得到属性
 export default {
+    "ROWS":{
+        "id":`${new Date().getTime()}-${Math.random()}`,
+        "type":"ROWS",
+        // 每一行的等分数，默认是整行
+        "col":1,
+        // 默认的行高
+        "height":60,
+        // 内部拖拽进去的组件描述对象，按顺序存储
+        "inner":[]
+    },
     'TEXT':{
         // 组件id
-        "id":new Date().getTime()+Math.random(),
+        "id":`${new Date().getTime()}-${Math.random()}`,
         // 组件类型
         "type":"TEXT",
         // 组件实际填报的值，预置
@@ -15,7 +25,7 @@ export default {
         "data":null
     },
     "INPUT":{
-        "id":new Date().getTime()+Math.random(),
+        "id":`${new Date().getTime()}-${Math.random()}`,
         "type":"INPUT",
         "actualValue":"",
         "common":{},
@@ -23,7 +33,7 @@ export default {
         "data":{}
     },
     "TEXTAREA":{
-        "id":new Date().getTime()+Math.random(),
+        "id":`${new Date().getTime()}-${Math.random()}`,
         "type":"TEXTAREA",
         "actualValue":"",
         "common":{},
@@ -31,7 +41,7 @@ export default {
         "data":{}
     },
     "SELECT":{
-        "id":new Date().getTime()+Math.random(),
+        "id":`${new Date().getTime()}-${Math.random()}`,
         "type":"SELECT",
         "actualValue":"",
         "common":{},
@@ -39,7 +49,7 @@ export default {
         "data":{}
     },
     "CHECKBOX":{
-        "id":new Date().getTime()+Math.random(),
+        "id":`${new Date().getTime()}-${Math.random()}`,
         "type":"CHECKBOX",
         "actualValue":"",
         "common":{},
@@ -47,7 +57,7 @@ export default {
         "data":{}
     },
     "RADIO":{
-        "id":new Date().getTime()+Math.random(),
+        "id":`${new Date().getTime()}-${Math.random()}`,
         "type":"RADIO",
         "actualValue":"",
         "common":{},
@@ -55,7 +65,7 @@ export default {
         "data":{}
     },
     "DATE":{
-        "id":new Date().getTime()+Math.random(),
+        "id":`${new Date().getTime()}-${Math.random()}`,
         "type":"DATE",
         "actualValue":"",
         "common":{},
@@ -63,14 +73,14 @@ export default {
         "data":{}
     },
     "TABLE":{
-        "id":new Date().getTime()+Math.random(),
+        "id":`${new Date().getTime()}-${Math.random()}`,
         "type":"TABLE",
         "actualValue":[],
         "common":{},
         "style":{},
         "data":{},
         "children":[{
-            "id":new Date().getTime()+Math.random(),
+            "id":`${new Date().getTime()}-${Math.random()}`,
             "type":"TABLECHILD",
             "actualValue":"",
             "common":{},
