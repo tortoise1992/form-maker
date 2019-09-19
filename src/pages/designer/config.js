@@ -14,6 +14,14 @@ export default {
         // 组件的数据属性
         "data":null
     },
+    "INPUT":{
+        "id":new Date().getTime()+Math.random(),
+        "type":"TEXTAREA",
+        "actualValue":"",
+        "common":{},
+        "style":{},
+        "data":{}
+    },
     "TEXTAREA":{
         "id":new Date().getTime()+Math.random(),
         "type":"TEXTAREA",
@@ -71,3 +79,6 @@ export default {
         }]
     }
 }  
+
+// 默认禁用设计模式下面的表单交互效果
+export const isDisabled=true

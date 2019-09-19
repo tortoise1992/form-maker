@@ -9,10 +9,17 @@ import BaseCheckbox from './baseComp/BaseCheckbox'
 import BaseRadio from './baseComp/BaseRadio'
 import BaseDate from './baseComp/BaseDate'
 import BaseTable from './baseComp/BaseTable'
+import {flow} from 'lodash'
 const compDict=(props)=>{
     return {
         "TEXT":<BaseText {...props}/>,
-        "INPUT":<BaseInput {...props}/>
+        "INPUT":<BaseInput {...props}/>,
+        "TEXTAREA":<BaseTextarea {...props}/>,
+        "SELECT":<BaseSelect {...props}/>,
+        "CHECKBOX":<BaseCheckbox {...props}/>,
+        "RADIO":<BaseRadio {...props}/>,
+        "DATE":<BaseDate {...props}/>,
+        "TABLE":<BaseTable {...props}/>
     }
 }
 const style = {
@@ -36,35 +43,15 @@ const Card = ({ text, isDragging, connectDragSource, connectDropTarget, isOver }
         </div>
     )
 }
-export default DropTarget(
-    Types.CARD,
-    {
-        canDrop: () => false,
-        hover(props, monitor) {
-            const { id: draggedId } = monitor.getItem()
-            const { id: overId } = props
-            if (draggedId !== overId) {
-                // const { index: overIndex } = props.findCard(overId)
-                // if(!monitor.isDragging){
-                //     props.moveCard(draggedId, overIndex)
-                // }
-            }
-        },
-
-    },
-    (connect, monitor) => ({
-        connectDropTarget: connect.dropTarget(),
-        isOver: monitor.isOver()
-    }),
-)(
-    DragSource(
-        Types.CARD,
+export default flow(
+    DragSource(Types.CARD,
         {
-            beginDrag: props => ({
-                id: props.id,
-                // originalIndex: props.findCard(props.id).index,
-            }),
-            endDrag(props, monitor) {
+            beginDrag: props => {
+                return {
+
+                }
+            },
+            endDrag(props, monitor) {                
                 const { id: droppedId, originalIndex } = monitor.getItem()
                 const didDrop = monitor.didDrop()
                 if (!didDrop) {
@@ -76,5 +63,17 @@ export default DropTarget(
             connectDragSource: connect.dragSource(),
             isDragging: monitor.isDragging(),
         }),
-    )(Card),
-)
+    ),
+    DropTarget(Types.CARD,
+        {
+            canDrop: () => false,
+            hover(props, monitor) {
+                console.log(props)
+                // 这里要判断目标不是自身
+            }
+        },
+        (connect, monitor) => ({
+            connectDropTarget: connect.dropTarget(),
+            isOver: monitor.isOver()
+        }))
+)(Card)

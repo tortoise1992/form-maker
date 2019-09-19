@@ -22,9 +22,9 @@ class Index extends Component {
 export default DropTarget(
     Types.CARD,
     {
-        drop(props, monitor, component) {
-            console.log(component)
+        drop(props, monitor, component) {            
             let dragData = monitor.getItem()
+            console.log(dragData)
         },
     },
     (connect, monitor) => ({
