@@ -33,10 +33,13 @@
 	"data": {
 		"DataMember": "",//数据集
 		"DataValueField": "",//数据集的字段
-		"BindDataField": "",//实际区分的值字段
+		"BindDataField": "",//实际区分的值字段名称
 		"AssociatedControlsID": "",//关联控件id
 		"BindDataSetConditions": "",//数据集条件
 		"FillingMode": "Manual"//填充模式
+		"AssociationFields":'', //联想字段
+		"BindDataValue":'', //值字段的实际取值
+		"formula":'' //公式
 	},
 	"style": {
 		"backgroundColor": "#fff",//背景颜色
@@ -86,6 +89,7 @@
 			"title": "姓名",
 			"mark": "",
 			"onlyId": "tableChild1565142938165"
+			"width":150 //表格列宽，默认150，可以自己设置
 		},
 		"data": {
 			"DataValueField": "",
