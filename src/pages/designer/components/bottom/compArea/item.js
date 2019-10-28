@@ -28,7 +28,7 @@ export default DragSource(
             }
         },
         endDrag(props, monitor) {
-
+            // console.log(monitor.getDropResult())
         },
     },
     (connect, monitor) => ({

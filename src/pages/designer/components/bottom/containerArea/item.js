@@ -33,18 +33,15 @@ const style = {
 }
 const Card = ({ item, isDragging, connectDragSource, connectDropTarget, isOver }) => {
     const opacity = isDragging ? 0 : 1
-    const borderBottom = isOver ? '1px solid red' : '1px dashed gray'
-    const ref = useRef(null)
-    connectDragSource(ref)
-    connectDropTarget(ref)
+    const borderBottom = isOver ? '1px solid red' : '1px dashed gray'    
     let props={
         item
     }
-    return (
-        <div ref={ref} style={{ ...style, opacity, borderBottom }}>
+    return connectDragSource(connectDropTarget(
+        <div style={{ ...style, opacity, borderBottom }}>
             {compDict(props)[item.type]}
         </div>
-    )
+    ))
 }
 export default flow(
     DragSource(Types.CARD,
@@ -69,17 +66,13 @@ export default flow(
     ),
     DropTarget(Types.CARD,
         {
-            canDrop: () => true,
-            // hover(props, monitor) {
-            //     console.log(props)
-            //     console.log(monitor.getItem())
-            //     // 这里要判断目标不是自身
-            //     // 通过monitor拿到自身的对象,props拿到的是目标对象
-            // },
-            drop(props, monitor){
-                console.log(props)
-                console.log(monitor.getItem())
-            }
+            canDrop: () => false,
+            hover(props, monitor,component) {
+                if(props.hoverId !== props.item.id){
+                    props.getCurrent(props.item.id)
+                }               
+               
+            },            
         },
         (connect, monitor) => ({
             connectDropTarget: connect.dropTarget(),

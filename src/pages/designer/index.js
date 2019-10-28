@@ -61,10 +61,10 @@ export default class Index extends React.Component {
                             currentComp={compList}
                             addComp={this.addComp}
                         />
-                        <PropArea
+                        {/* <PropArea
                             compList={compList}
                             currentComp={compList}
-                        />
+                        /> */}
                     </div>                
                 </DndProvider>
             </Card>
